@@ -11,5 +11,14 @@
 // });
 
 
+//onclick show side menu
+const sideMenu = document.querySelector('#side-menu');
+const menu = document.querySelector('.menu');
+menu.addEventListener('click', ()=>{
+    sideMenu.style.display = 'flex';
+});
 
-
+const close = document.querySelector('.close-icon');
+close.addEventListener('click', ()=>{
+    sideMenu.style.display = 'none';
+})
