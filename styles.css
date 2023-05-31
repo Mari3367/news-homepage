@@ -1,17 +1,16 @@
 * {
     font-family: 'Inter', sans-serif;
+    color: hsl(236, 13%, 42%);
 }
 
 
 
 body {
-    background-color: rgb(233, 195, 202);
+    background-color: hsl(36, 100%, 99%);
     margin: 0;
     box-sizing: border-box;
     /* position: relative; */
 }
-
-
 
 
 
@@ -28,11 +27,6 @@ body {
     margin: 100px;
 }
 
-#new-section-items {
-    background-color: rgb(202, 223, 151);
-    grid-area: aside;
-}
-
 
 /*use flex for nav items*/
 
@@ -41,9 +35,10 @@ nav {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    background-color: rgb(237, 142, 237);
+    background-color: hsl(36, 100%, 99%);
     grid-area: nav;
     margin-bottom: 40px;
+    margin-top: 0;
 }
 
 nav ul {
@@ -64,6 +59,10 @@ nav ul li a {
     text-decoration: none;
 }
 
+nav ul li a:hover {
+    color: hsl(7, 87%, 65%);
+}
+
 nav .logo {
     /* height: 7vh; */
     height: clamp(3rem, 5vh, 5rem);
@@ -82,7 +81,7 @@ nav .menu {
 
 #main-part {
     margin-right: 30px;
-    background-color: rgb(151, 199, 223);
+    background-color: hsl(36, 100%, 99%);
     grid-area: main;
     margin-bottom: 40px;
     position: relative;
@@ -116,6 +115,7 @@ nav .menu {
     font-size: clamp(3rem, 2.5vw, 5rem);
     margin: 0;
     font-weight: 800;
+    color: hsl(240, 100%, 5%);
 }
 
 .text-wrap .wrap-p-button {
@@ -151,6 +151,12 @@ button {
     letter-spacing: clamp(0.2rem, 0.5vw, 0.3rem);
     position: absolute;
     bottom: 0;
+    background-color: hsl(7, 87%, 65%);
+    color: hsl(36, 100%, 99%);
+}
+
+button:hover {
+    background-color: hsl(240, 100%, 5%);
 }
 
 
@@ -162,33 +168,43 @@ button {
     flex-direction: column;
     justify-content: space-between;
     margin-bottom: 40px;
+    background-color: hsl(240, 100%, 5%);
+    grid-area: aside;
 
 }
 
 #new-section-items h2 {
     font-size: 40px;
     margin: 0;
+    color: rgb(211, 174, 61);
 }
 
 #new-section-items h4 {
     font-size: 18px;
+    color: hsl(36, 100%, 99%);
+
+}
+
+#new-section-items h4:hover {
+    color: rgb(211, 174, 61);
 }
 
 #new-section-items p {
     /* font-size: 15px; */
     font-size: clamp(0.7rem, 2.5vw, 1rem);
     line-height: 1.5;
+    color: hsl(233, 8%, 79%);;
 }
 
 .border {
     height: 1px;
-    background-color: red;
+    background-color: hsl(36, 100%, 99%);
 }
 
 /*footer part*/
 
 #number-sections {
-    background-color: rgb(138, 220, 188);
+    background-color: hsl(36, 100%, 99%);
     grid-area: footer;
     display: flex;
 }
@@ -205,13 +221,19 @@ button {
 
 .number-wrapper .wrapper h3 {
     /* font-size: 2.5em; */
-    font-size: clamp(2rem, 2.5vw, 4rem);;
+    font-size: clamp(2rem, 2.5vw, 4rem);
+    color: hsl(233, 8%, 79%);
 }
 
 .number-wrapper .wrapper h4 {
     margin-top: 8px;
     font-size: clamp(0.8rem, 2.5vw, 1.2rem);;
     /* font-size: 18px; */
+    color: hsl(240, 100%, 5%);
+}
+
+.number-wrapper .wrapper h4:hover {
+    color: hsl(7, 87%, 65%);
 }
 
 .number-wrapper .wrapper p {
@@ -235,7 +257,7 @@ button {
 -add menu
 */
 
-@media only screen and (min-width: 320px) and (max-width: 950px) {
+@media only screen and (min-width: 280px) and (max-width: 950px) {
 
     nav ul {
         display: none;
@@ -243,7 +265,8 @@ button {
     #content {
         display: flex;
         flex-direction: column;
-        margin: 20px;
+        /* margin: 20px; */
+        margin: 20px 40px;
         position: relative;
     }
 
@@ -299,6 +322,11 @@ button {
     .number-wrapper .wrapper p {
         margin-top: 0.3rem;
         font-size: 12px;
+        padding-right: 0;
+    }
+
+    .small-pic {
+        margin-right: 10px;
     }
 
     /*menu icon*/
@@ -315,12 +343,13 @@ button {
         width: 40%;
         top: 0;
         right: 0;
-        background-color: rgb(208, 148, 203);
+        background-color: hsl(36, 100%, 99%);
         overflow-x: hidden;
         overflow-y: hidden;
         z-index: 2;
         padding: 6rem 1.5rem;
         display: none;
+        z-index: 2;
     }
 
     #side-menu .close-icon {
@@ -339,6 +368,21 @@ button {
         margin-top: 1.5rem;
         font-size: clamp(1.3rem, 2.5vw, 3rem);
         color: black;
+    }
+
+    #side-menu a:hover {
+        color: hsl(7, 87%, 65%);
+    }
+
+    #dark-layer {
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(50, 47, 47, 0.5);
+        z-index: 1;
+        top: 0;
+        right: 0;
+        display: none;
     }
 
     button {
